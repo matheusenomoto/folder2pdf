@@ -13,7 +13,8 @@ IGNORE_FOLDERS = {
 SUPPORTED_EXTENSIONS = {
     '.txt', '.json', '.js', '.ts', '.py', '.env',
     '.gitignore', '.dockerignore', '.dockerfile', '.css',
-    '.html', '.ejs', '.md', '.yml', '.yaml', '.sh'
+    '.html', '.ejs', '.md', '.yml', '.yaml', '.sh',
+    'Dockerfile', 
 }
 
 
