@@ -17,6 +17,9 @@ SUPPORTED_EXTENSIONS = {
     'Dockerfile', 
 }
 
+# Special filenames without extensions
+SPECIAL_FILENAMES = {'dockerfile', 'Dockerfile'}
+
 
 def remove_non_latin1(text: str) -> str:
     """Remove characters that cannot be encoded in Latin-1."""
@@ -71,7 +74,7 @@ def export_folder_to_pdf(root_path: str):
             full_path = os.path.join(current_root, file)
             extension = os.path.splitext(file)[1].lower()
 
-            if extension in SUPPORTED_EXTENSIONS or file.startswith('.'):
+            if extension in SUPPORTED_EXTENSIONS or file in SPECIAL_FILENAMES or file.startswith('.'):
                 try:
                     with open(full_path, 'r', encoding='utf-8', errors='ignore') as f:
                         content = f.read()
